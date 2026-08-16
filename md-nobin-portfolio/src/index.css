@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #09090b;
+    color: #f4f4f5;
+    overflow-x: hidden;
+  }
+}
+
+.glow-purple {
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+}
+
+.subtle-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.subtle-border:hover {
+  border-color: rgba(139, 92, 246, 0.35);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
