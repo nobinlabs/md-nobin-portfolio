@@ -6,27 +6,28 @@ import { Button } from '../components/Button';
 export const Hero = ({ onOpenContact }) => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Hexagon / Benzene Grid Pattern */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        <svg className="absolute inset-0 w-full h-full stroke-purple-500/20 [mask-image:radial-gradient(ellipse_80%_60%_at_50%_30%,#000_50%,transparent_100%)]" width="100%" height="100%">
+      {/* High-Contrast Benzene / Hexagon Grid Background */}
+      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden bg-[#09090b]">
+        <svg
+          className="absolute inset-0 w-full h-full opacity-60"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <defs>
-            <pattern id="hexagons" width="50" height="43.3" patternUnits="userSpaceOnUse" patternTransform="scale(1)">
+            <pattern id="hex-grid" width="40" height="69.28" patternUnits="userSpaceOnUse">
               <path
-                d="M25 0 L50 14.43 L50 43.3 L25 57.74 L0 43.3 L0 14.43 Z"
+                d="M 40 0 L 20 11.55 L 0 0 L 0 23.09 L 20 34.64 L 40 23.09 Z M 0 34.64 L 20 46.19 L 0 57.74 L 0 80.83 L 20 92.38 L 40 80.83 L 40 57.74 L 20 46.19 Z"
                 fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
-              />
-              <path
-                d="M0 0 L25 14.43 L25 43.3 L0 57.74"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1"
+                stroke="#a855f7"
+                strokeWidth="1.2"
+                strokeOpacity="0.45"
               />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#hexagons)" />
+          <rect width="100%" height="100%" fill="url(#hex-grid)" />
         </svg>
+
+        {/* Center Purple Radial Glow */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-purple-600/25 rounded-full blur-[140px] pointer-events-none" />
       </div>
 
       {/* Top Ambient Glow */}
