@@ -7,24 +7,24 @@ export const Hero = ({ onOpenContact }) => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#09090b]">
       
-      {/* 1. Direct Inline SVG Hexagon Pattern */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-        <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
+      {/* Tech Square Grid Background (Inspired by mdbiplob.com) */}
+      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden bg-[#060809]">
+        
+        {/* Square Grid Pattern Layer */}
+        <svg 
+          className="absolute inset-0 w-full h-full opacity-20 [mask-image:radial-gradient(ellipse_80%_65%_at_50%_35%,#000_50%,transparent_100%)]" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <defs>
-            <pattern id="hex-pattern" width="48" height="84" patternUnits="userSpaceOnUse">
-              <path
-                d="M24 0 L48 14 L48 42 L24 56 L0 42 L0 14 Z M0 56 L24 70 L48 56 L48 84 L24 98 L0 84 Z"
-                fill="none"
-                stroke="#a855f7"
-                strokeWidth="1.5"
-              />
+            <pattern id="tech-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#22c55e" strokeWidth="0.75" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#hex-pattern)" />
+          <rect width="100%" height="100%" fill="url(#tech-grid)" />
         </svg>
 
-        {/* Center Purple Radial Glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-purple-600/20 rounded-full blur-[140px] pointer-events-none" />
+        {/* Soft Radial Ambient Glow at the Top/Center */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
       </div>
 
       {/* 2. Main Content Grid */}
