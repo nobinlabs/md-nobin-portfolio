@@ -7,23 +7,30 @@ export const Hero = ({ onOpenContact }) => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#09090b]">
       
-      {/* 1. Direct Benzene / Hexagon Canvas Background */}
-      <div 
-        className="absolute inset-0 pointer-events-none -z-10"
-        style={{
-          backgroundColor: '#09090b',
-          backgroundImage: `
-            radial-gradient(ellipse 80% 60% at 50% 30%, rgba(168, 85, 247, 0.25), transparent 75%),
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='83.14' viewBox='0 0 48 83.14'%3E%3Cpath d='M24 0 L48 13.86 L48 41.57 L24 55.43 L0 41.57 L0 13.86 Z M0 55.43 L24 69.28 L48 55.43 L48 83.14 L24 97 L0 83.14 Z' fill='none' stroke='%23a855f7' stroke-width='1.5' stroke-opacity='0.45'/%3E%3C/svg%3E")
-            `,
-          backgroundSize: 'auto, 48px 83.14px',
-          backgroundPosition: 'center top, center top'
-        }}
-      />
+      {/* 1. Direct Inline SVG Hexagon Pattern */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <svg className="absolute inset-0 w-full h-full opacity-35" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="hex-pattern" width="48" height="84" patternUnits="userSpaceOnUse">
+              <path
+                d="M24 0 L48 14 L48 42 L24 56 L0 42 L0 14 Z M0 56 L24 70 L48 56 L48 84 L24 98 L0 84 Z"
+                fill="none"
+                stroke="#a855f7"
+                strokeWidth="1.5"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hex-pattern)" />
+        </svg>
 
+        {/* Center Purple Radial Glow */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-purple-600/20 rounded-full blur-[140px] pointer-events-none" />
+      </div>
+
+      {/* 2. Main Content Grid */}
       <div className="relative max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        {/* Left Column: Text Content */}
+        {/* Left Column */}
         <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium text-zinc-300 bg-zinc-900/90 border border-zinc-800 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -43,7 +50,7 @@ export const Hero = ({ onOpenContact }) => {
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Button onClick={() => onOpenContact && onOpenContact()} size="lg" variant="primary">
-              Start a Project <ArrowRight className="w-4 h-4"/>
+              Start a Project <ArrowRight className="w-4 h-4" />
             </Button>
 
             <Button href="#work" size="lg" variant="secondary">
@@ -52,12 +59,12 @@ export const Hero = ({ onOpenContact }) => {
 
             {siteConfig.calendarUrl && (
               <Button href={siteConfig.calendarUrl} rel="noopener noreferrer" size="lg" target="_blank" variant="outline">
-                Book Strategy Call <ArrowUpRight className="w-4 h-4"/>
+                Book Strategy Call <ArrowUpRight className="w-4 h-4" />
               </Button>
             )}
           </div>
 
-          {/* Small Profile Info Card */}
+          {/* Profile Card */}
           <div className="mt-4 flex items-center gap-4 p-3 rounded-2xl bg-zinc-900/80 border border-zinc-800 backdrop-blur-md max-w-md w-full">
             <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-zinc-800 border border-zinc-700 shrink-0 flex items-center justify-center font-mono text-xs text-purple-400 font-bold">
               MN
@@ -72,7 +79,7 @@ export const Hero = ({ onOpenContact }) => {
           </div>
         </div>
 
-        {/* Right Column: Profile Image Card */}
+        {/* Right Column */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end relative">
           <div className="absolute -inset-4 bg-gradient-to-tr from-purple-600/30 to-indigo-600/30 rounded-3xl blur-2xl -z-10 opacity-70" />
           
