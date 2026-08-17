@@ -11,13 +11,14 @@
 }
 
 .bg-benzene-pattern {
-  background-color: #09090b;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l11 6.35 11-6.35V17.9L14 11.55 3 17.9zM0 49l13.99-8.08L28 49H0zm0-49h28L13.99 8.08 0 0z' fill='%23a855f7' fill-opacity='0.12' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-color: #050508;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='84' viewBox='0 0 48 84'%3E%3Cpath d='M24 0l24 14v28L24 56 0 42V14L24 0zm0 84l24-14V42L24 56 0 42v28l24 14z' fill='none' stroke='%23a855f7' stroke-width='1.2' stroke-opacity='0.25'/%3E%3C/svg%3E");
+  background-size: 48px 84px;
 }
 
 .bg-benzene-mask {
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 40%, transparent 95%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 40%, transparent 95%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, #000 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, #000 60%, transparent 100%);
 }
 
 .glow-purple {
