@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 import { Button } from '../components/Button';
+import profilePhoto from '../assets/profile.jpg';
 
 export const Hero = ({ onOpenContact }) => {
   return (
@@ -22,7 +23,7 @@ export const Hero = ({ onOpenContact }) => {
         </svg>
 
         {/* Purple Ambient Glow */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[350px] bg-purple-600/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[320px] bg-purple-600/10 rounded-full blur-[160px] pointer-events-none" />
       </div>
 
       {/* Main Content */}
@@ -48,7 +49,7 @@ export const Hero = ({ onOpenContact }) => {
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Button onClick={() => onOpenContact && onOpenContact()} size="lg" variant="primary">
-              Start a Project <ArrowRight className="w-4 h-4"/>
+              Start a Project <ArrowRight className="w-4 h-4" />
             </Button>
 
             <Button href="#work" size="lg" variant="secondary">
@@ -57,7 +58,7 @@ export const Hero = ({ onOpenContact }) => {
 
             {siteConfig.calendarUrl && (
               <Button href={siteConfig.calendarUrl} rel="noopener noreferrer" size="lg" target="_blank" variant="outline">
-                Book Strategy Call <ArrowUpRight className="w-4 h-4"/>
+                Book Strategy Call <ArrowUpRight className="w-4 h-4" />
               </Button>
             )}
           </div>
@@ -83,13 +84,10 @@ export const Hero = ({ onOpenContact }) => {
           
           <div className="relative rounded-3xl p-2 bg-zinc-900/80 border border-zinc-800 shadow-2xl overflow-hidden max-w-[360px] w-full">
             <img
-              src={`${import.meta.env.BASE_URL}images/profile.jpg`}
-              alt="Md Nobin"
+              src={profilePhoto}
+              alt={siteConfig.name}
               className="w-full h-auto aspect-square object-cover rounded-2xl bg-zinc-950"
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.parentElement.innerHTML = '<div class="w-full aspect-square flex items-center justify-center bg-zinc-900 rounded-2xl font-mono text-3xl text-purple-400 font-bold">MN</div>';
-              }}
+              loading="eager"
             />
           </div>
         </div>
