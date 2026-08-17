@@ -83,7 +83,7 @@ export const Hero = ({ onOpenContact }) => {
           
           <div className="relative rounded-3xl p-2 bg-zinc-900/80 border border-zinc-800 shadow-2xl overflow-hidden max-w-[360px] w-full">
             <img
-              src="./images/profile.jpg"
+              src={`${import.meta.env.BASE_URL}images/profile.jpg`}
               alt="Md Nobin"
               className="w-full h-auto aspect-square object-cover rounded-2xl bg-zinc-950"
               onError={(e) => {
