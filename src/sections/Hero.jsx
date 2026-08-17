@@ -6,8 +6,28 @@ import { Button } from '../components/Button';
 export const Hero = ({ onOpenContact }) => {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Benzene Ring Grid Background */}
-      <div className="absolute inset-0 bg-benzene-pattern bg-benzene-mask pointer-events-none -z-10" />
+      {/* Hexagon / Benzene Grid Pattern */}
+      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
+        <svg className="absolute inset-0 w-full h-full stroke-purple-500/20 [mask-image:radial-gradient(ellipse_80%_60%_at_50%_30%,#000_50%,transparent_100%)]" width="100%" height="100%">
+          <defs>
+            <pattern id="hexagons" width="50" height="43.3" patternUnits="userSpaceOnUse" patternTransform="scale(1)">
+              <path
+                d="M25 0 L50 14.43 L50 43.3 L25 57.74 L0 43.3 L0 14.43 Z"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+              />
+              <path
+                d="M0 0 L25 14.43 L25 43.3 L0 57.74"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hexagons)" />
+        </svg>
+      </div>
 
       {/* Top Ambient Glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[550px] h-[350px] bg-purple-600/15 rounded-full blur-[120px] pointer-events-none -z-10" />
