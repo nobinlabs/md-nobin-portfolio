@@ -5,29 +5,27 @@ import { Button } from '../components/Button';
 
 export const Hero = ({ onOpenContact }) => {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#09090b]">
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#07090d]">
       
-      {/* Tech Square Grid Background (Inspired by mdbiplob.com) */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden bg-[#060809]">
-        
-        {/* Square Grid Pattern Layer */}
+      {/* High-Visibility Tech Grid Background */}
+      <div className="absolute inset-0 pointer-events-none z-0">
         <svg 
-          className="absolute inset-0 w-full h-full opacity-20 [mask-image:radial-gradient(ellipse_80%_65%_at_50%_35%,#000_50%,transparent_100%)]" 
+          className="w-full h-full opacity-60" 
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            <pattern id="tech-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#22c55e" strokeWidth="0.75" />
+            <pattern id="tech-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+              <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#22c55e" strokeWidth="0.9" strokeOpacity="0.5" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#tech-grid)" />
         </svg>
 
-        {/* Soft Radial Ambient Glow at the Top/Center */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
+        {/* Ambient Top Glow */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-emerald-500/15 rounded-full blur-[140px] pointer-events-none" />
       </div>
 
-      {/* 2. Main Content Grid */}
+      {/* Main Content */}
       <div className="relative max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         {/* Left Column */}
@@ -39,7 +37,7 @@ export const Hero = ({ onOpenContact }) => {
 
           <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white max-w-3xl leading-[1.15]">
             AI-Driven Marketing & Automation for{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-indigo-300 to-purple-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-400">
               Modern Businesses.
             </span>
           </h1>
@@ -50,7 +48,7 @@ export const Hero = ({ onOpenContact }) => {
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <Button onClick={() => onOpenContact && onOpenContact()} size="lg" variant="primary">
-              Start a Project <ArrowRight className="w-4 h-4" />
+              Start a Project <ArrowRight className="w-4 h-4"/>
             </Button>
 
             <Button href="#work" size="lg" variant="secondary">
@@ -59,21 +57,21 @@ export const Hero = ({ onOpenContact }) => {
 
             {siteConfig.calendarUrl && (
               <Button href={siteConfig.calendarUrl} rel="noopener noreferrer" size="lg" target="_blank" variant="outline">
-                Book Strategy Call <ArrowUpRight className="w-4 h-4" />
+                Book Strategy Call <ArrowUpRight className="w-4 h-4"/>
               </Button>
             )}
           </div>
 
           {/* Profile Card */}
           <div className="mt-4 flex items-center gap-4 p-3 rounded-2xl bg-zinc-900/80 border border-zinc-800 backdrop-blur-md max-w-md w-full">
-            <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-zinc-800 border border-zinc-700 shrink-0 flex items-center justify-center font-mono text-xs text-purple-400 font-bold">
+            <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-zinc-800 border border-zinc-700 shrink-0 flex items-center justify-center font-mono text-xs text-emerald-400 font-bold">
               MN
             </div>
             <div className="flex-1 min-w-0">
               <h2 className="text-sm font-semibold text-white truncate">{siteConfig.name}</h2>
               <p className="text-xs text-zinc-400 truncate">{siteConfig.title}</p>
               <div className="flex items-center gap-2 mt-0.5">
-                <span className="text-[11px] font-mono text-purple-400">{siteConfig.company}</span>
+                <span className="text-[11px] font-mono text-emerald-400">{siteConfig.company}</span>
               </div>
             </div>
           </div>
@@ -81,7 +79,7 @@ export const Hero = ({ onOpenContact }) => {
 
         {/* Right Column */}
         <div className="lg:col-span-5 flex justify-center lg:justify-end relative">
-          <div className="absolute -inset-4 bg-gradient-to-tr from-purple-600/30 to-indigo-600/30 rounded-3xl blur-2xl -z-10 opacity-70" />
+          <div className="absolute -inset-4 bg-gradient-to-tr from-emerald-600/25 to-teal-600/25 rounded-3xl blur-2xl -z-10 opacity-70" />
           
           <div className="relative rounded-3xl p-2 bg-zinc-900/80 border border-zinc-800 shadow-2xl overflow-hidden max-w-[360px] w-full">
             <img
@@ -90,7 +88,7 @@ export const Hero = ({ onOpenContact }) => {
               className="w-full h-auto aspect-square object-cover rounded-2xl bg-zinc-950"
               onError={(e) => {
                 e.target.style.display = 'none';
-                e.target.parentElement.innerHTML = '<div class="w-full aspect-square flex items-center justify-center bg-zinc-900 rounded-2xl font-mono text-3xl text-purple-400 font-bold">MN</div>';
+                e.target.parentElement.innerHTML = '<div class="w-full aspect-square flex items-center justify-center bg-zinc-900 rounded-2xl font-mono text-3xl text-emerald-400 font-bold">MN</div>';
               }}
             />
           </div>
